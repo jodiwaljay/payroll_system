@@ -1,8 +1,4 @@
-import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
-
-class LoginControl extends Component {
+class ActionButton extends Component {
   constructor(props) {
     super(props);
     this.handleCommentSubmit = this.handleCommentSubmit.bind(this);
@@ -59,7 +55,7 @@ class LoginControl extends Component {
         <LoginButton name='Create Department' onClick={this.handleCommentSubmit} />
       </div>;
     }
-    
+
     return (
       <div>
         {content}
@@ -71,19 +67,8 @@ class LoginControl extends Component {
   }
 }
 
-function LoginButton(props) {
-  return (
-    <button onClick={props.onClick}>
-      {props.name}
-    </button>
-  );
-}
-
 function TextField(props) {
   return (
     <input name={props.name} onChange={props.onChange}/>
   );
 }
-
-export default LoginControl;
-export {LoginButton};
