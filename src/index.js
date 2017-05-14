@@ -4,15 +4,17 @@ import ReactDOM from 'react-dom';
 import LoginControl, {LoginButton} from './App';
 import element from './visibility_elem';
 import NewEmployeeForm from './complex_components/employee_reg_form';
+import TestForm from './mobx-form/app.container';
 import './index.css';
 
 function combine(props){
   return (
     <div>
-      <LoginControl />  {/*class itself (LoginControl)*/}
-      {element }        {/* Object or element of class Welcome (Defined in visibility_elem)*/}
+      {/*<LoginControl />
+      {element }
       <LoginButton name='Click Me'/>
-      <NewEmployeeForm />
+      <NewEmployeeForm />*/}
+      <TestForm />
     </div>
   );
 }

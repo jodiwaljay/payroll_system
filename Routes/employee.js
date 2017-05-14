@@ -1,4 +1,4 @@
-var uri = 'mongodb://jodiwal:strong1234@ds139781.mlab.com:39781/payroll_database';
+var uri = 'mongodb://localhost/mydatabase';
 var express = require('express');
 var mongoose = require('mongoose');
 var router = express.Router();
