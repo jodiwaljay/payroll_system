@@ -9,7 +9,7 @@ class FormStore {
     Object.keys(form).map(key => {
       data[key] = form[key][valueKey]
     });
-    return data
+    return data;
   };
 
   @action
@@ -24,7 +24,7 @@ class FormStore {
 
   @action
   onDropdownChange = (field, option) => {
-    this.form.meta.isValid = false;
+    //this.form.meta.isValid = false;
     this.form.fields[field].option = option;
   };
 

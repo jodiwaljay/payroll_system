@@ -1,6 +1,5 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
-import LoginForm from './login-form.component'
 
 class AddDept extends Component{
   constructor(props){
@@ -35,9 +34,9 @@ class AddDept extends Component{
 
   handleCommentSubmit() {
     if(this.state.deptText){
-    const comment = {content:this.state.deptText};
+    const newDept = {departmentName:this.state.deptText};
     console.log(this.props.urlDeptSync);
-    axios.post(this.props.urlDeptSync,comment)
+    axios.post(this.props.urlDeptSync,newDept)
     .then(res => {
       this.setState({ data: res, deptText:' ' });
       if(this.props.onAddingDept){ this.props.onAddingDept(); }

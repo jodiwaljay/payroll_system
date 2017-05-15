@@ -25,21 +25,22 @@ class LoginForm extends Component {
       <form className="login-form" onSubmit={this.submit}>
         <h3 className="login-form__title">Login</h3>
         <div className="login-form__field">
-          <FormInput type="email"
-                 name="email"
-                 value={fields.email.value}
-                 error={fields.email.error}
+          <FormInput type="text"
+                 name="empName"
+                 value={fields.empName.value}
+                 error={fields.empName.error}
                  onChange={onInputChange}
-                 placeholder="Email"/>
+                 placeholder="Employee Name"/>
         </div>
         <div className="login-form__field">
-          <FormInput type="password"
-                 name="password"
-                 value={fields.password.value}
-                 error={fields.password.error}
+          <FormInput type="text"
+                 name="empCode"
+                 value={fields.empCode.value}
+                 error={fields.empCode.error}
                  onChange={onInputChange}
-                 placeholder="Password"/>
+                 placeholder="Employee Code / ID"/>
         </div>
+
 
         <div >
         <div>
@@ -70,7 +71,7 @@ class LoginForm extends Component {
   }
   submit = (event) => {
     event.preventDefault();
-    this.props.onSubmit(this.props.form.fields.email.value)
+    this.props.onSubmit(this.props.form.fields.empName.value)
   }
 
   componentWillMount(){
@@ -78,12 +79,12 @@ class LoginForm extends Component {
   }
 
   updateDeptDatabase(){
-    console.error('something');
+    
     axios.get(this.props.urlDeptSync)
     .then(res => {
       console.log(res.data);
       this.setState(
-        { options: res.data.map(function(option){ return {id:option['_id'], label:option['content']}; }) }
+        { options: res.data.map(function(option){ return {id:option['_id'], label:option['departmentName']}; }) }
       );
 
     })

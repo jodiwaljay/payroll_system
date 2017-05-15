@@ -6,12 +6,12 @@ class LoginStore extends GenericFormStore {
   @observable
   form = {
     fields: {
-      email: {
+      empName: {
         value: '',
         error: null,
-        rule: 'required|email'
+        rule: 'required'
       },
-      password: {
+      empCode: {
         value: '',
         error: null,
         rule: 'required'
