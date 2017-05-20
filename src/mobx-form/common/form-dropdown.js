@@ -12,11 +12,6 @@ let getFormInputClasses = ({error}) => {
 let FormDropdown = (props) => {
   let {name, error, onChange, ...rest} = props;
 
-  let defaultOption = {value:'select', label:'select'};
-  if(props.options[0]){
-    defaultOption = props.options[0];
-  }
-
   return (
     <span className={getFormInputClasses(props)}>
       <Dropdown {...rest}

@@ -47,7 +47,7 @@ class LoginForm extends Component {
           <FormDropdown
                  placeholder="Select Department"
                  name="department"
-                 value={fields.department.option.label || 'Select Department'}
+                 value={fields.department.option.label}
                  error={fields.department.error}
                  onChange={onDropdownChange}
                  options={this.state.options}
@@ -71,7 +71,7 @@ class LoginForm extends Component {
   }
   submit = (event) => {
     event.preventDefault();
-    this.props.onSubmit(this.props.form.fields.empName.value)
+    this.props.onSubmit(this.props.form.fields)
   }
 
   componentWillMount(){
@@ -79,12 +79,12 @@ class LoginForm extends Component {
   }
 
   updateDeptDatabase(){
-    
+
     axios.get(this.props.urlDeptSync)
     .then(res => {
       console.log(res.data);
       this.setState(
-        { options: res.data.map(function(option){ return {id:option['_id'], label:option['departmentName']}; }) }
+        { options: res.data.map(function(option){ return {_id:option['_id'], label:option['departmentName']}; }) }
       );
 
     })

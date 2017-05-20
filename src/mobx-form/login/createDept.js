@@ -40,7 +40,7 @@ class AddDept extends Component{
     .then(res => {
       this.setState({ data: res, deptText:' ' });
       if(this.props.onAddingDept){ this.props.onAddingDept(); }
-
+  
       console.error(res);
     })
     .catch(err => {

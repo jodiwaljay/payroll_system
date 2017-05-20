@@ -29,6 +29,8 @@ class LoginStore extends GenericFormStore {
       error: null,
     },
   }
+
+
 }
 
 export default LoginStore

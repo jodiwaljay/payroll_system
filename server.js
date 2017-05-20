@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // route file for employee database handling
-var employeeRoute = require('./Routes/employee');
-
+var deptRoute = require('./Routes/departmentDatabase');
+var employeeRoute = require('./Routes/employeeDatabase');
 //set our port to either a predetermined port number if you have set it up, or 3001
 var port = 3001;
 
@@ -30,7 +30,8 @@ app.use(function(req, res, next) {
 });
 
 //Sending all employee related database requests to employeeRoute defined above
-app.use('/database_handle', employeeRoute);
+app.use('/database_handle', deptRoute);
+app.use('/employee_database_handle', employeeRoute);
 
 //starts the server and listens for requests
 app.listen(port, function() {
